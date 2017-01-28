@@ -1,7 +1,7 @@
 version: '2'
 services:
   machine_learning:
-    image: tensorflow/tensorflow:0.12.1-gpu
+    build: ./tensorflow
     volumes:
       - nvidia_driver_367.57:/usr/local/nvidia:ro
       - ./share:/share:rw
@@ -9,11 +9,12 @@ services:
       - "/dev/nvidiactl"
       - "/dev/nvidia-uvm"
       - "/dev/nvidia0"
-    tty: true
-    stdin_open: true
+#    tty: true
+#    stdin_open: true
     ports:
-      - "6006"
-      - "8888-8900"
+      - "6006:6006"
+      - "8888:8888"
+      - "3000:3000"
 
 volumes:
   nvidia_driver_367.57:
