@@ -9,8 +9,8 @@ services:
       - "/dev/nvidiactl"
       - "/dev/nvidia-uvm"
       - "/dev/nvidia0"
-#    tty: true
-#    stdin_open: true
+    tty: true
+    stdin_open: true
     ports:
       - "6006:6006"
       - "8888:8888"
