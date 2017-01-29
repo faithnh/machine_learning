@@ -14,4 +14,6 @@ RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
 # cloud9がLD_LIBRARY_PATHを書き換えてnvidia系のものが動かなくしていたため
 RUN echo -n "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:" >> /root/.bashrc
 
+RUN pip install pandas
+
 CMD ["node","/cloud9/server.js","--port","3000","--listen","0.0.0.0","-w","/share","--auth","auth:password"]
